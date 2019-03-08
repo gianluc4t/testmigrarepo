@@ -1,4 +1,4 @@
-package com.everis.gt.utils.auth;
+package br.com.gt.lab;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
