@@ -2,14 +2,7 @@
 ____
 
 This app is just a template base to develop Web service restfull , using 
-* H2 inmemory DB, 
-* hibernate as ORM, 
-* spring data for data acess model, 
-* spring boot as web server solution, 
-* spring cache and ehcache, 
-* swagger-ui as documentation pattern, 
-* junit+mockito for unit test layer
-* docker 
+
 
 ____
  
@@ -21,32 +14,21 @@ ____
 
 ____
   
-** Run test and jacoco report **
- 
-> mvn clean test
- 
- the jacoco report can be found in {project root}\target\jacoco-ut\index.html
- 
-____
-  
 ** Run local **
  
 > mvn clean spring-boot:run
 
 ____
-  
-** docker: install **
- 
-> mvn clean install dockerfile:build
 
-____
-  
-** docker: run **
- 
-> docker run -p 8080:8080 -t templatedock/template
+** Generate auth token **
+
+to generate authentication token, execute a POST to localhost:8080/login, using as a body the follow
+{"email" : "user","senha" : "password"}
 
 ____
 
-** swagger **
+** inject token **
 
-swagger documentation/test pages can be found [here](http://localhost:8080/swagger-ui.html)
+to inject the token to authenticate the request: add to a header with the KEY "Authorization" and as a valeu the token returned by /login  ("Bearer eyJhbdasda....")
+
+
